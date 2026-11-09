@@ -64,7 +64,7 @@ etl-indicadores-economicos/
 ### 1. Clonar o repositório
 
 ```bash
-git clone URL_DO_REPOSITORIO
+git clone https://github.com/lucasldsdata/etl-indicadores-economicos.git
 ```
 
 ### 2. Criar o ambiente virtual
