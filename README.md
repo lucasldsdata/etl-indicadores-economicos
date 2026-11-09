@@ -29,6 +29,21 @@ Desenvolver um processo automatizado de Engenharia de Dados, aplicando conceitos
 
 ## Arquitetura do projeto
 
+```mermaid
+flowchart TD
+    A["API Banco Central - SGS"] --> B["Extract - extract.py"]
+    B --> C["JSON - data/raw"]
+    C --> D["Transform - transform.py"]
+    D --> E["CSV - data/processed"]
+    E --> F["Load - load.py"]
+    F --> G[("PostgreSQL")]
+    G --> H["Tabela public.ipca"]
+
+    I["main.py"] -. "Orquestra as etapas" .-> B
+    I -.-> D
+    I -.-> F
+```
+
 O pipeline é composto por três etapas principais:
 
 1. **Extract:** coleta os dados do IPCA por meio da API do Banco Central e salva os dados brutos em JSON.
